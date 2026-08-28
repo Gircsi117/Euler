@@ -10,7 +10,7 @@ Mi a 600851475143 szám legnagyobb prímtényezője?
 
 bool is_prim(long long num)
 {
-  for (long long i = 2; i < ceil(num / 2); i++)
+  for (long long i = 2; i <= ceil(num / 2); i++)
   {
     if (num % i == 0)
       return false;
