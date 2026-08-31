@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include "../common/primes.h"
 using namespace std;
 
 /*
@@ -7,20 +8,6 @@ Az első hat prímszámot felsorolva: 2, 3, 5, 7, 11 és 13, láthatjuk, hogy a 
 
 Mi a 10001. prímszám?
 */
-
-bool is_prim(long long num)
-{
-  if (num == 1 || num == 2)
-    return true;
-
-  for (long long i = 2; i <= ceil(num / 2); i++)
-  {
-    if (num % i == 0)
-      return false;
-  }
-
-  return true;
-}
 
 int main()
 {
@@ -33,7 +20,7 @@ int main()
   {
     num++;
 
-    if (is_prim(num))
+    if (isPrime(num))
     {
       count++;
     }
