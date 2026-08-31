@@ -1,6 +1,9 @@
 #pragma once
 
+#include <vector>
 #include <cmath>
+
+using namespace std;
 
 inline bool isPrime(long long num)
 {
@@ -14,4 +17,11 @@ inline bool isPrime(long long num)
   }
 
   return true;
+}
+
+inline vector<int> primeFactorization(int number)
+{
+  vector<int> numbers = {};
+
+  return numbers;
 }

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 /*
@@ -23,13 +24,23 @@ Láthatjuk, hogy 28 az első háromszögszám, aminek több mint öt osztója va
 Mennyi az első háromszögszám értéke, aminek több mint ötszáz osztója van?
 */
 
-const int COUNT = 500;
+const int LIMIT = 500;
 
 int main()
 {
-  
 
+  long long number = 1;
+  int n = 0;
 
-  cout << "Hello World!";
+  while (true)
+  {
+    number = (n * (n + 1)) / 2;
+
+    cout << number << "\n";
+
+    n++;
+  }
+
+  cout << "Result: " << number << "\n";
   return 0;
 }
