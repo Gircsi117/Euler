@@ -59,16 +59,14 @@ int main()
       }
     }
 
-    cout << n << ". => " << number << " => " << trueDividerCount << "\n";
-
     if (trueDividerCount >= LIMIT)
     {
+      cout << n << ". => " << number << " => " << trueDividerCount << "\n";
       break;
     }
 
     n++;
   }
-
-  // cout << "Result: " << number << "\n";
+  
   return 0;
 }
