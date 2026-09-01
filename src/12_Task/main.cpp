@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include "../common/primes.h"
 using namespace std;
 
 /*
@@ -28,19 +29,46 @@ const int LIMIT = 500;
 
 int main()
 {
-
-  long long number = 1;
-  int n = 0;
+  long long n = 1;
 
   while (true)
   {
-    number = (n * (n + 1)) / 2;
+    long long number = (n * (n + 1)) / 2;
+    vector<long long> dividers = primeFactorization(number);
 
-    cout << number << "\n";
+    int trueDividerCount = 1;
+
+    int count = 1;
+
+    for (int i = 0; i < dividers.size(); i++)
+    {
+      if (i == dividers.size() - 1)
+      {
+        trueDividerCount *= count + 1;
+        break;
+      }
+
+      if (dividers[i] == dividers[i + 1])
+      {
+        count++;
+      }
+      else
+      {
+        trueDividerCount *= count + 1;
+        count = 1;
+      }
+    }
+
+    cout << n << ". => " << number << " => " << trueDividerCount << "\n";
+
+    if (trueDividerCount >= LIMIT)
+    {
+      break;
+    }
 
     n++;
   }
 
-  cout << "Result: " << number << "\n";
+  // cout << "Result: " << number << "\n";
   return 0;
 }
