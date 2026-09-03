@@ -14,7 +14,7 @@ int main()
   // int num = 13195;
   long long num = 600851475143;
 
-  vector<int> dividers = primeFactorization(num);
+  vector<long long> dividers = primeFactorization(num);
 
   for (int d : dividers)
   {

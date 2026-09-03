@@ -31,7 +31,7 @@ int main()
 
   for (double i = 1; i <= SIZE; i++)
   {
-    cout << SIZE + i << " / " << i << "\n";
+    //cout << SIZE + i << " / " << i << "\n";
     result *= (SIZE + i) / i;
   }
 
