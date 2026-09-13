@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <vector>
 using namespace std;
 
 /*
@@ -34,6 +36,17 @@ MEGJEGYZÉS: Mivel mindössze 16384 útvonal létezik, ez a feladat megoldható 
 
 int main()
 {
+  string myText;
+  ifstream MyReadFile("src/18_Task/data.txt");
+
+  vector<vector<string>> rows = {};
+
+  while (getline(MyReadFile, myText))
+  {
+    
+  }
+  MyReadFile.close();
+
   cout << "Hello World!";
   return 0;
 }
