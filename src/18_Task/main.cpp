@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <bits/stdc++.h>
+#include "../common/split.h"
 using namespace std;
 
 /*
@@ -34,19 +36,46 @@ Határozd meg az alábbi háromszög esetében a felülről lefelé elérhető l
 MEGJEGYZÉS: Mivel mindössze 16384 útvonal létezik, ez a feladat megoldható az összes útvonal végigpróbálásával is. A 67. feladat viszont ugyanez a kihívás egy száz sorból álló háromszöggel; az már brute force módszerrel nem oldható meg, és egy ügyesebb megoldást igényel! (c;
 */
 
+vector<vector<string>> rows = {};
+map<string, int> dict = {};
+
+int calculate(int row = 0, int col = 0)
+{
+  string key = to_string(row) + "-" + to_string(col);
+
+  if (dict.find(key) != dict.end())
+  {
+    return dict[key];
+  }
+
+  int current = stoi(rows[row][col]);
+
+  if (row == rows.size() - 1)
+    return current;
+
+  int left = calculate(row + 1, col);
+  int right = calculate(row + 1, col + 1);
+
+  int maxItem = max(left, right);
+  int result = current + maxItem;
+
+  dict[key] = result;
+  return result;
+}
+
 int main()
 {
   string myText;
   ifstream MyReadFile("src/18_Task/data.txt");
 
-  vector<vector<string>> rows = {};
-
   while (getline(MyReadFile, myText))
   {
-    
+    rows.push_back(split(myText, ' '));
   }
   MyReadFile.close();
 
-  cout << "Hello World!";
+  int result = calculate();
+
+  cout << "Result: " << result;
   return 0;
 }
