@@ -20,7 +20,7 @@ int main()
   }
 
   cout << "Number: " << number << "\n";
-  cout << "Result: " << digitSum(number) << "\n";
+  cout << "Result: " << sum(number) << "\n";
 
   return 0;
 }

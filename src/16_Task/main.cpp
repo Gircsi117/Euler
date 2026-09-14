@@ -23,7 +23,7 @@ int main()
     number = multiplication(number, 2);
   }
 
-  result = digitSum(number);
+  result = sum(number);
 
   cout << "Number: " << number << "\n";
   cout << "Result: " << result << "\n";

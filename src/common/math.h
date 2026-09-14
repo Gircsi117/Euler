@@ -1,4 +1,9 @@
 #pragma once
+
+#include <cmath>
+#include <vector>
+#include <set>
+
 using namespace std;
 
 inline long long factorial(long long num)
@@ -46,7 +51,7 @@ inline string multiplication(string number, int product)
   return current;
 }
 
-inline int digitSum(string number)
+inline int sum(string number)
 {
   int result = 0;
 
@@ -56,4 +61,32 @@ inline int digitSum(string number)
   }
 
   return result;
+}
+
+inline int sum(set<int> numbers)
+{
+  int result = 0;
+
+  for (auto number : numbers)
+  {
+    result += number;
+  }
+
+  return result;
+}
+
+inline set<int> trueDividers(int number)
+{
+  set<int> dividers = {1, number};
+
+  for (int i = 2; i <= ceil(sqrt(number)); i++)
+  {
+    if (number % i == 0)
+    {
+      dividers.insert(i);
+      dividers.insert(number / i);
+    }
+  }
+
+  return dividers;
 }
