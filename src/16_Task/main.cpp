@@ -1,4 +1,5 @@
 #include <iostream>
+#include "../common/math.h"
 using namespace std;
 
 /*
@@ -18,44 +19,11 @@ int main()
 
   for (int i = 1; i < LIMIT; i++)
   {
-    string current = "";
-    int rest = 0;
 
-    for (int i = number.length() - 1; i >= 0; i--)
-    {
-      int num = stoi(number.substr(i, 1)) * 2 + rest;
-
-      string numStr = to_string(num);
-
-      if (i == 0)
-      {
-        current = numStr + current;
-        continue;
-      }
-
-      string last = numStr.substr(numStr.length() - 1, 1);
-
-      current = last + current;
-
-      string r = numStr.substr(0, numStr.length() - 1);
-      if (r == "")
-      {
-        rest = 0;
-      }
-      else
-      {
-        rest = stoi(r);
-      }
-    }
-
-    // cout << current << "\n";
-    number = current;
+    number = multiplication(number, 2);
   }
 
-  for (int i = 0; i < number.length(); i++)
-  {
-    result += stoi(number.substr(i, 1));
-  }
+  result = digitSum(number);
 
   cout << "Number: " << number << "\n";
   cout << "Result: " << result << "\n";
