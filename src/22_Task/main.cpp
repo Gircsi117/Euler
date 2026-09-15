@@ -1,4 +1,9 @@
 #include <iostream>
+#include <map>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include "../common/split.h"
 using namespace std;
 
 /*
@@ -11,8 +16,55 @@ Például: ábécésorrendbe rendezve a COLIN, aminek értéke 3 + 15 + 12 + 9 +
 Mennyi az összes névpontszám összege a fájlban?
 */
 
+map<char, int> abc;
+
+int getNameValue(string name)
+{
+  int result = 0;
+
+  for (int i = 0; i < name.length(); i++)
+  {
+    char cstr = name[i];
+    result += abc[cstr];
+  }
+
+  return result;
+}
+
 int main()
 {
-  cout << "Hello World!";
+  for (char c = 'A'; c <= 'Z'; ++c)
+  {
+    abc[c] = c - 'A' + 1;
+  }
+
+  long long result = 0;
+
+  string myText;
+  ifstream MyReadFile("src/22_Task/data.txt");
+
+  vector<string> names;
+
+  //*
+  while (getline(MyReadFile, myText))
+  {
+    names = split(myText, ',');
+
+    for (auto &&name : names)
+    {
+      name = name.substr(1, name.length() - 2);
+    }
+
+    sort(names.begin(), names.end());
+  }
+  MyReadFile.close();
+
+  //*
+  for (int i = 0; i < names.size(); i++)
+  {
+    result += getNameValue(names[i]) * (i + 1);
+  }
+
+  cout << "Result: " << result;
   return 0;
 }
