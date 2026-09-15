@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include "../common/split.h"
+#include "../common/string.h"
 using namespace std;
 
 /*

@@ -3,7 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <fstream>
-#include "../common/split.h"
+#include "../common/string.h"
 using namespace std;
 
 /*

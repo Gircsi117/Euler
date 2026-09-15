@@ -2,7 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <bits/stdc++.h>
-#include "../common/split.h"
+#include "../common/string.h"
 using namespace std;
 
 /*

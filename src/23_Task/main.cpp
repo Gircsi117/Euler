@@ -1,4 +1,5 @@
 #include <iostream>
+#include "../common/math.h"
 using namespace std;
 
 /*
@@ -17,6 +18,6 @@ Határozd meg az összes olyan pozitív egész szám összegét, amely nem írha
 
 int main()
 {
-  cout << "Hello World!";
+  cout << sum(vector<string>{"45", "16", "9", "600", "4000000"});
   return 0;
 }

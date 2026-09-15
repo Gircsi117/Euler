@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "../common/math.h"
 using namespace std;
 
 /*
@@ -24,41 +25,7 @@ int main()
   }
   MyReadFile.close();
 
-  string result = "";
-  int rest = 0;
-
-  for (int i = NUMBER_LENGTH - 1; i >= 0; i--)
-  {
-    int current = 0;
-
-    for (string number : numbers)
-    {
-      current += stoi(number.substr(i, 1));
-    }
-
-    current += rest;
-
-    string currentStr = to_string(current);
-
-    if (i == 0)
-    {
-      result = currentStr + result;
-      break;
-    }
-
-    string value = currentStr.substr(currentStr.length() - 1, 1);
-    result = value + result;
-
-    currentStr.pop_back();
-    if (currentStr.length() == 0)
-    {
-      rest = 0;
-    }
-    else
-    {
-      rest = stoi(currentStr);
-    }
-  }
+  string result = sum(numbers);
 
   cout << result << "\n";
   cout << result.substr(0, 10) << "\n";

@@ -3,6 +3,7 @@
 #include <cmath>
 #include <vector>
 #include <set>
+#include "../common/string.h"
 
 using namespace std;
 
@@ -75,7 +76,53 @@ inline int sum(set<int> numbers)
   return result;
 }
 
-inline set<int> trueDividers(int number)
+inline string sum(const vector<string> &numbers)
+{
+  string result = "";
+  int rest = 0;
+
+  string longestNum = longest(numbers);
+
+  for (int i = 1; i <= longestNum.length(); i++)
+  {
+    int current = 0;
+
+    for (string number : numbers)
+    {
+      int index = number.length() - i;
+
+      if (index >= 0)
+        current += stoi(number.substr(index, 1));
+    }
+
+    current += rest;
+
+    string currentStr = to_string(current);
+
+    if (i == 0)
+    {
+      result = currentStr + result;
+      break;
+    }
+
+    string value = currentStr.substr(currentStr.length() - 1, 1);
+    result = value + result;
+
+    currentStr.pop_back();
+    if (currentStr.length() == 0)
+    {
+      rest = 0;
+    }
+    else
+    {
+      rest = stoi(currentStr);
+    }
+  }
+
+  return result;
+}
+
+inline set<int> dividers(int number)
 {
   set<int> dividers = {1, number};
 
@@ -89,4 +136,12 @@ inline set<int> trueDividers(int number)
   }
 
   return dividers;
+}
+
+inline set<int> trueDividers(int number)
+{
+  set<int> results = dividers(number);
+  results.erase(number);
+
+  return results;
 }
