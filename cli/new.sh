@@ -27,7 +27,7 @@ using namespace std;
 
 int main()
 {
-  cout << "Hello World!";
+  cout << "Result: " << "0";
   return 0;
 }
 EOF
