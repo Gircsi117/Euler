@@ -71,6 +71,7 @@ int main()
     }
   }
 
+  cout << "Length: " << longestNumber.length() << "\n";
   cout << "Result: " << result << "\n";
 
   return 0;
