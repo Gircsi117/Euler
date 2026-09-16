@@ -41,7 +41,7 @@ using namespace std;
 
 int main()
 {
-  cout << "Result: " << "0";
+  cout << "Result: " << "0" << "\n";
   return 0;
 }
 EOF
