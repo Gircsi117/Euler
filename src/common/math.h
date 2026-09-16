@@ -83,13 +83,13 @@ inline string sum(const vector<string> &numbers)
 
   string longestNum = longest(numbers);
 
-  for (int i = 1; i <= longestNum.length(); i++)
+  for (int i = 0; i < longestNum.length(); i++)
   {
     int current = 0;
 
     for (string number : numbers)
     {
-      int index = number.length() - i;
+      int index = number.length() - (i + 1);
 
       if (index >= 0)
         current += stoi(number.substr(index, 1));
@@ -98,12 +98,6 @@ inline string sum(const vector<string> &numbers)
     current += rest;
 
     string currentStr = to_string(current);
-
-    if (i == 0)
-    {
-      result = currentStr + result;
-      break;
-    }
 
     string value = currentStr.substr(currentStr.length() - 1, 1);
     result = value + result;
@@ -118,6 +112,9 @@ inline string sum(const vector<string> &numbers)
       rest = stoi(currentStr);
     }
   }
+
+  if (rest > 0)
+    return to_string(rest) + result;
 
   return result;
 }

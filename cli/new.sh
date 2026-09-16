@@ -19,6 +19,20 @@ mkdir -p "$TASK_DIR"
 
 cat > "$TASK_DIR/main.cpp" <<'EOF'
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <set>
+#include <map>
+#include <algorithm>
+#include <cmath>
+
+#include "../common/math.h"
+#include "../common/primes.h"
+#include "../common/sort.h"
+#include "../common/string.h"
+
 using namespace std;
 
 /*
