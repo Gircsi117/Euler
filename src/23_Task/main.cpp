@@ -18,6 +18,33 @@ Határozd meg az összes olyan pozitív egész szám összegét, amely nem írha
 
 int main()
 {
-  cout << sum(vector<string>{"45", "16", "9", "600", "4000000"});
+  const int LIMIT = 28123;
+  set<int> numbers;
+
+  long long result = 0;
+
+  for (size_t i = 12; i < LIMIT; i++)
+  {
+    if (sum(trueDividers(i)) > i)
+      numbers.insert(i);
+  }
+
+  for (size_t i = 0; i <= LIMIT; i++)
+  {
+    bool good = true;
+    for (auto &&num : numbers)
+    {
+      if (numbers.find(i - num) != numbers.end())
+      {
+        good = false;
+        break;
+      }
+    }
+
+    if (good)
+      result += i;
+  }
+
+  cout << "Result: " << result;
   return 0;
 }
