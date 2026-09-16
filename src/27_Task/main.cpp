@@ -36,8 +36,18 @@ pl. |11| = 11 és |−4| = 4
 Határozd meg az a és b együtthatók szorzatát arra a másodfokú kifejezésre, amely a legtöbb prímszámot adja egymást követő n értékekre, n = 0-tól kezdve.
 */
 
+long long euler()
+{
+  long long result = 0;
+
+  int n = 0;
+
+  return result;
+}
+
 int main()
 {
-  cout << "Result: " << "0" << "\n";
+
+  cout << "Result: " << euler() << "\n";
   return 0;
 }
