@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include "../common/string.h"
+#include "../../common/string.h"
 using namespace std;
 
 /*
@@ -36,7 +36,7 @@ int main()
   int max = 0;
 
   string myText;
-  ifstream MyReadFile("src/11_Task/data.txt");
+  ifstream MyReadFile("src/10_Tasks/11_Task/data.txt");
 
   while (getline(MyReadFile, myText))
   {

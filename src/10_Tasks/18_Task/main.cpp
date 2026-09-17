@@ -2,7 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <bits/stdc++.h>
-#include "../common/string.h"
+#include "../../common/string.h"
 using namespace std;
 
 /*
@@ -66,7 +66,7 @@ int calculate(int row = 0, int col = 0)
 int main()
 {
   string myText;
-  ifstream MyReadFile("src/18_Task/data.txt");
+  ifstream MyReadFile("src/10_Tasks/18_Task/data.txt");
 
   while (getline(MyReadFile, myText))
   {

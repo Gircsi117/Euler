@@ -3,7 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <fstream>
-#include "../common/string.h"
+#include "../../common/string.h"
 using namespace std;
 
 /*
@@ -41,7 +41,7 @@ int main()
   long long result = 0;
 
   string myText;
-  ifstream MyReadFile("src/22_Task/data.txt");
+  ifstream MyReadFile("src/20_Tasks/22_Task/data.txt");
 
   vector<string> names;
 

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include "../common/primes.h"
+#include "../../common/primes.h"
 using namespace std;
 
 /*

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../common/primes.h"
+#include "../../common/primes.h"
 using namespace std;
 
 /*

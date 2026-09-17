@@ -9,10 +9,10 @@
 #include <cmath>
 #include <iomanip>
 
-#include "../common/math.h"
-#include "../common/primes.h"
-#include "../common/sort.h"
-#include "../common/string.h"
+#include "../../common/math.h"
+#include "../../common/primes.h"
+#include "../../common/sort.h"
+#include "../../common/string.h"
 
 using namespace std;
 

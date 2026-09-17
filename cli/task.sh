@@ -8,7 +8,7 @@ fi
 
 cd "$(dirname "$0")/.."
 
-TASK_DIR=$(find src -maxdepth 1 -type d -name "${1}_*" | head -n 1)
+TASK_DIR=$(find src -mindepth 2 -maxdepth 2 -type d -name "${1}_Task" | head -n 1)
 
 if [ -z "$TASK_DIR" ]; then
   echo "No task folder found for '$1' in src/"

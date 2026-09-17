@@ -3,7 +3,7 @@
 #include <cmath>
 #include <vector>
 #include <set>
-#include "../common/string.h"
+#include "string.h"
 
 using namespace std;
 

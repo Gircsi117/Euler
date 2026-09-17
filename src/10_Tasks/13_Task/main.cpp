@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "../common/math.h"
+#include "../../common/math.h"
 using namespace std;
 
 /*
@@ -15,7 +15,7 @@ const int NUMBER_LENGTH = 50;
 int main()
 {
   string myText;
-  ifstream MyReadFile("src/13_Task/data.txt");
+  ifstream MyReadFile("src/10_Tasks/13_Task/data.txt");
 
   vector<string> numbers = {};
 

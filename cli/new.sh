@@ -8,7 +8,8 @@ fi
 
 cd "$(dirname "$0")/.."
 
-TASK_DIR="src/${1}_Task"
+DECADE=$(( (10#$1 / 10) * 10 ))
+TASK_DIR="src/${DECADE}_Tasks/${1}_Task"
 
 if [ -d "$TASK_DIR" ]; then
   echo "Task folder '$TASK_DIR' already exists"
@@ -28,10 +29,10 @@ cat > "$TASK_DIR/main.cpp" <<'EOF'
 #include <algorithm>
 #include <cmath>
 
-#include "../common/math.h"
-#include "../common/primes.h"
-#include "../common/sort.h"
-#include "../common/string.h"
+#include "../../common/math.h"
+#include "../../common/primes.h"
+#include "../../common/sort.h"
+#include "../../common/string.h"
 
 using namespace std;
 

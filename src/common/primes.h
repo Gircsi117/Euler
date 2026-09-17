@@ -9,6 +9,9 @@ vector<long long> primes = {2};
 
 inline bool isPrime(long long num)
 {
+  if (num <= 0)
+    return false;
+
   if (num == 1 || num == 2)
     return true;
 
