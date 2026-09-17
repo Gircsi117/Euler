@@ -9,10 +9,10 @@ vector<long long> primes = {2};
 
 inline bool isPrime(long long num)
 {
-  if (num <= 0)
+  if (num <= 1)
     return false;
 
-  if (num == 1 || num == 2)
+  if (num == 2)
     return true;
 
   for (long long i = 2; i <= ceil(sqrt(num)); i++)
