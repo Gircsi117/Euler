@@ -42,7 +42,7 @@ using namespace std;
 
 int main()
 {
-  cout << "Result: " << "0" << "\n";
+  cout << "Result: " << "0" << std::endl;
   return 0;
 }
 EOF

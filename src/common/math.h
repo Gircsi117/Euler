@@ -142,3 +142,18 @@ inline set<int> trueDividers(int number)
 
   return results;
 }
+
+inline string pow(int a, int b)
+{
+  if (a == 0)
+    return "0";
+
+  string result = "1";
+
+  for (int i = 0; i < b; i++)
+  {
+    result = multiplication(result, a);
+  }
+
+  return result;
+}
