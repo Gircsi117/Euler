@@ -29,6 +29,8 @@ Hányféleképpen lehet kirakni 2 fontot bármennyi érme felhasználásával?
 
 int main()
 {
+  set<int> moneys = {1, 2, 5, 10, 20, 50, 100, 200};
+
   cout << "Result: " << "0" << std::endl;
   return 0;
 }
