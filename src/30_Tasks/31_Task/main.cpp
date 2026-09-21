@@ -27,10 +27,65 @@ Lehetséges 2 fontot a következőképpen kirakni:
 Hányféleképpen lehet kirakni 2 fontot bármennyi érme felhasználásával?
 */
 
+vector<int> moneys = {200, 100, 50, 20, 10, 5, 2, 1};
+set<string> solutions = {};
+
+int result = 0;
+
+string vectorToString(vector<int> value)
+{
+  string result = "";
+
+  sort(value.begin(), value.end());
+  reverse(value.begin(), value.end());
+
+  for (auto &&i : value)
+  {
+    result += to_string(i) + ";";
+  }
+
+  return result;
+}
+
+// Brute force - Nagyon lassú
+void eulerv1(int money, int actual, vector<int> history)
+{
+  if (money - actual < 0)
+    return;
+
+  history.push_back(actual);
+
+  if (money - actual == 0)
+  {
+    string str = vectorToString(history);
+
+    if (solutions.find(str) == solutions.end())
+    {
+      solutions.insert(str);
+      result++;
+      // cout << result << ". : " << str << "\n\n";
+    }
+
+    return;
+  }
+
+  for (auto &&i : moneys)
+  {
+    if (i > actual)
+      continue;
+    eulerv1(money - actual, i, history);
+  }
+}
+
 int main()
 {
-  set<int> moneys = {1, 2, 5, 10, 20, 50, 100, 200};
 
-  cout << "Result: " << "0" << std::endl;
+  for (auto &&i : moneys)
+  {
+    // cout << i << "\n";
+    eulerv1(200, i, vector<int>{});
+  }
+
+  cout << "Result: " << result << std::endl;
   return 0;
 }
