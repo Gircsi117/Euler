@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <string>
 #include <vector>
 #include <sstream>
@@ -29,4 +30,26 @@ inline string longest(const vector<string> &words)
   }
 
   return longestStr;
+}
+
+inline string replaceFirst(string word, string replaced, string sub)
+{
+  int index = word.find(replaced);
+  if (index == string::npos)
+    return word;
+
+  return word.replace(index, replaced.length(), sub);
+}
+
+inline string replaceAll(string word, string replaced, string sub)
+{
+  string result = word;
+  int index = 0;
+
+   while (result.find(replaced) != string::npos)
+  {
+    result = replaceFirst(result, replaced, sub);
+  }
+
+  return result;
 }
