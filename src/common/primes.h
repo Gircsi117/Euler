@@ -5,7 +5,7 @@
 
 using namespace std;
 
-vector<long long> primes = {2};
+vector<long long> _primes = {2};
 
 inline bool isPrime(long long num)
 {
@@ -44,7 +44,7 @@ inline vector<long long> primeFactorization(long long number)
     bool isDivided = false;
 
     // Meglévő prímek ellenőrzése
-    for (long long prime : primes)
+    for (long long prime : _primes)
     {
       if (number % prime == 0)
       {
@@ -68,12 +68,12 @@ inline vector<long long> primeFactorization(long long number)
     }
 
     // Új prím meghatározása
-    const long long lastPrime = primes[primes.size() - 1];
+    const long long lastPrime = _primes[_primes.size() - 1];
     for (long long i = lastPrime + 1; i <= number; i++)
     {
       if (isPrime(i))
       {
-        primes.push_back(i);
+        _primes.push_back(i);
 
         if (number % i == 0)
         {

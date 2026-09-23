@@ -7,6 +7,8 @@
 
 using namespace std;
 
+const int MILLION = 1000000;
+
 inline long long factorial(long long num)
 {
   long long result = 1;

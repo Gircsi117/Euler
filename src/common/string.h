@@ -46,10 +46,18 @@ inline string replaceAll(string word, string replaced, string sub)
   string result = word;
   int index = 0;
 
-   while (result.find(replaced) != string::npos)
+  while (result.find(replaced) != string::npos)
   {
     result = replaceFirst(result, replaced, sub);
   }
 
   return result;
+}
+
+inline bool isPalindrom(string word)
+{
+  string w = word;
+  reverse(w.begin(), w.end());
+
+  return w == word;
 }
