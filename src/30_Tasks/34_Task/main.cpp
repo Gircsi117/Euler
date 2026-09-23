@@ -21,10 +21,43 @@ using namespace std;
 Határozd meg az összes olyan szám összegét, amely egyenlő a számjegyei faktoriálisainak összegével.
 
 Megjegyzés: Mivel 1! = 1 és 2! = 2 nem összegek, ezért ezek nem tartoznak bele.
+
+Result: 40730
 */
+
+map<char, int> factorials = {};
+
+bool euler(int num)
+{
+  string strNum = to_string(num);
+  long long result = 0;
+
+  for (auto &&i : strNum)
+  {
+    result += factorials[i];
+
+    if (result > num)
+      return false;
+  }
+
+  return result == num;
+}
 
 int main()
 {
-  cout << "Result: " << "0" << std::endl;
+  long long result = 0;
+
+  for (int i = 0; i < 10; i++)
+  {
+    factorials[to_string(i)[0]] = factorial(i);
+  }
+
+  for (size_t i = 3; i < 1000000; i++)
+  {
+    if (euler(i))
+      result += i;
+  }
+
+  cout << "Result: " << result << std::endl;
   return 0;
 }
