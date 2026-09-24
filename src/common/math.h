@@ -159,3 +159,23 @@ inline string pow(int a, int b)
 
   return result;
 }
+
+inline bool isPandigital(long long n)
+{
+  set<string> nums = {};
+
+  for (auto &&i : to_string(n))
+  {
+    if (string() + i == "0")
+      return false;
+
+    nums.insert(string() + i);
+  }
+
+  return nums.size() == 9;
+}
+
+inline bool isInteger(float n)
+{
+  return (fmod(n, 1.0) == 0.0);
+}
